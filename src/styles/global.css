@@ -1,0 +1,71 @@
+.base {
+    margin: 3rem auto;
+    max-width: 800px;
+    padding: 0 1rem;
+}
+
+.base--photo {
+    margin: 1rem auto;
+    max-width: 97%;
+    padding: 0 1rem;
+}
+
+.title-photo {
+    display: flex;
+    position: relative;
+}
+
+.title-photo__photo {
+    width: 100%;
+    margin: auto;
+}
+
+.title-photo__text {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Fjalla One";
+    color: white;
+    text-shadow: 1px 1px 2px black;
+}
+
+.title-photo__text--title {
+    font-size: 5vh;
+    margin: 0px;
+}
+
+.title-photo__text--subtitle {
+    font-size: 2.5vh;
+    margin: 0px;
+}
+
+.photo-intro-text {
+    font-family: "Cantarell"; 
+    text-align: center; 
+    width: 450px;
+    min-width: 60%;
+    margin: 50px auto;
+}
+
+.photo-group {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px;
+}
+
+.photo-group__item {
+    list-style: none;
+    display: inline-block;
+    flex-grow: 1;
+    margin: 2px;
+}
+
+.photo-group__photo {
+    min-width: 300px;
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    vertical-align: bottom;
+}
