@@ -13,7 +13,9 @@ export default ({ data }) => {
     data.japan.childImageSharp.fluid,
     data.japan.childImageSharp.fluid];
 
-  const introText = "A trip to Japan";
+  const introText = 
+    "A three week holiday in Japan, basing ourselves in Tokyo and Osaka, and \
+    taking various day trips to the other nearby cities";
   
   return(
     <PhotoLayout 
@@ -30,13 +32,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    japan: s3ImageAsset(Key: {eq: "photos/japan/miyajima.jpg"}) {
-      childImageSharp {
-        fluid(maxWidth: 1500) {
-          ...GatsbyImageSharpFluid,
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
+    japan: s3ImageAsset(Key: {eq: "photos/japan/miyajima.jpg"}) { ...titlePhotoFields }
   }
 `

@@ -30,13 +30,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    japan: s3ImageAsset(Key: {eq: "photos/japan/miyajima.jpg"}) {
-      childImageSharp {
-        fluid(maxWidth: 1500) {
-          ...GatsbyImageSharpFluid,
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
+    japan: s3ImageAsset(Key: {eq: "photos/japan/miyajima.jpg"}) { ...titlePhotoFields }
   }
 `

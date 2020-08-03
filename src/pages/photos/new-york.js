@@ -13,7 +13,9 @@ export default ({ data }) => {
     data.centralPark.childImageSharp.fluid,
     data.centralPark.childImageSharp.fluid];
 
-  const introText = "We were invited to a wedding in New York towards the end of 2019";
+  const introText = 
+    "We were invited to a wedding in New Jersey towards the end of 2019 and \
+    decided to make a week-long trip of it, dropping by Manhattan too";
   
   return(
     <PhotoLayout
@@ -30,13 +32,6 @@ export default ({ data }) => {
 
 export const query = graphql`
   query {
-    centralPark: s3ImageAsset(Key: {eq: "photos/new-york/central-park.jpg"}) {
-      childImageSharp {
-        fluid(maxWidth: 1500) {
-          ...GatsbyImageSharpFluid,
-          ...GatsbyImageSharpFluidLimitPresentationSize
-        }
-      }
-    }
+    centralPark: s3ImageAsset(Key: {eq: "photos/new-york/central-park.jpg"}) { ...titlePhotoFields }
   }
 `

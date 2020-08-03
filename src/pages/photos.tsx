@@ -1,9 +1,9 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { Link } from "gatsby"
 import Layout from "../components/layout"
 import Emoji from "../components/emoji"
 
-export default ({ data }) => (
+const Photos: FunctionComponent = () => (
   <Layout>
     <div>
       <h1><Emoji symbol="📷" label="camera"/> Photos</h1>
@@ -14,4 +14,6 @@ export default ({ data }) => (
       </ul>
     </div>
   </Layout>
-)
+);
+
+export default Photos;
