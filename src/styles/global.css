@@ -6,7 +6,7 @@
 
 .base--photo {
     margin: 1rem auto;
-    max-width: 97%;
+    max-width: 1400px;
     padding: 0 1rem;
 }
 
@@ -44,8 +44,8 @@
 .photo-intro-text {
     font-family: "Cantarell"; 
     text-align: center; 
-    width: 450px;
-    min-width: 60%;
+    width: 600px;
+    max-width:100%;
     margin: 50px auto;
 }
 
@@ -62,10 +62,15 @@
     margin: 2px;
 }
 
-.photo-group__photo {
+.photo-group__photo--landscape {
     min-width: 300px;
-    max-height: 100%;
-    max-width: 100%;
     object-fit: cover;
     vertical-align: bottom;
+    margin: auto;
+}
+
+.photo-group__photo--portrait {
+    object-fit: cover;
+    vertical-align: bottom;
+    margin: auto;
 }

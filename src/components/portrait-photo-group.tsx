@@ -6,10 +6,10 @@ type PhotoGroupProps = {
   photos: Array<any>
 }
 
-const PhotoGroup: FunctionComponent<PhotoGroupProps> = ({ photos }) => {
+const PortraitPhotoGroup: FunctionComponent<PhotoGroupProps> = ({ photos }) => {
   const photoItems = photos.map((photo) =>
     <li className="photo-group__item">
-      <Img className="photo-group__photo" fluid={photo}/>
+      <Img className="photo-group__photo--portrait" fluid={photo}/>
     </li>
   );
   
@@ -22,12 +22,12 @@ const PhotoGroup: FunctionComponent<PhotoGroupProps> = ({ photos }) => {
   );
 };
 
-export default PhotoGroup;
+export default PortraitPhotoGroup;
 
 export const query = graphql`
-  fragment photoFields on S3ImageAsset {
+  fragment portraitPhotoFields on S3ImageAsset {
     childImageSharp {
-      fluid(maxWidth: 800) {
+      fluid(maxWidth: 700) {
         ...GatsbyImageSharpFluid,
         ...GatsbyImageSharpFluidLimitPresentationSize
       }

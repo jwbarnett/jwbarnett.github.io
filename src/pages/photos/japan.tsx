@@ -1,9 +1,13 @@
-import React from "react"
+import React, { FunctionComponent } from "react"
 import { graphql } from "gatsby"
 import PhotoLayout from "../../components/photo-layout"
-import PhotoGroup from "../../components/photo-group"
+import LandscapePhotoGroup from "../../components/landscape-photo-group"
 
-export default ({ data }) => {
+interface Props {
+  data: any
+}
+
+const JapanPhotos: FunctionComponent<Props> = ({ data }) => {
   const list = [
     data.japan.childImageSharp.fluid,
     data.japan.childImageSharp.fluid,
@@ -13,20 +17,24 @@ export default ({ data }) => {
     data.japan.childImageSharp.fluid,
     data.japan.childImageSharp.fluid];
 
-  const introText = "A holiday to Poland"
+  const introText: string = 
+    "A three week holiday in Japan, basing ourselves in Tokyo and Osaka, and \
+    taking various day trips to the other nearby cities";
   
   return(
     <PhotoLayout 
-        titlePhoto={data.japan.childImageSharp.fluid} 
-        titleText="POLAND"
-        subtitleText="August 2017"
+        titlePhoto={data.japan.childImageSharp.fluid}
+        titleText="JAPAN"
+        subtitleText="August 2018"
         introText={introText}>
       <div>
-        <PhotoGroup photos={list}/>
+        <LandscapePhotoGroup photos={list}/>
       </div>
     </PhotoLayout>
   );
-}
+};
+
+export default JapanPhotos;
 
 export const query = graphql`
   query {
